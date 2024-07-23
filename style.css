@@ -137,20 +137,20 @@ input{
     body{
         margin: 0px;
         padding: 0px;
-
+        overflow: hidden;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+        scrollbar-color: #005efe;
     }
     .mob-logo{
        display: block;
     }
     .container{
-        margin: 0px;
+        margin: auto;
         height: 100%;
         width: 100%;
         display: flex;
         flex-wrap: nowrap;
-        overflow-y: scroll;
-        scrollbar-width: thin;
-        scrollbar-color: #005efe;
     }
     .left-container{
         display: none;
@@ -162,6 +162,22 @@ input{
         white-space: nowrap;
     }
     input[type=tel]{
-        width: 83vw;
+        width: 100%;
     }
+}
+
+@media (max-height: 1000px) {
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+    .mob
+  .container{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 100%;
+  }
+  .right-container{
+    height: 100%;
+}
 }
