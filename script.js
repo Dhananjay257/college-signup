@@ -6,6 +6,7 @@ function showStep(n) {
     steps[n].style.display = "block";
     fixStepIndicator(n);
     updateNavigationButtons(n, steps.length);
+    addInputEventListeners(steps[n]);
 }
 
 function nextPrev(n) {
@@ -24,21 +25,25 @@ function validateForm() {
     let valid = true;
     let inputs = document.getElementsByClassName("step")[currentStep].getElementsByTagName("input");
     let selects = document.getElementsByClassName("step")[currentStep].getElementsByTagName("select");
-    // let textareas = document.getElementsByClassName("step")[currentStep].getElementsByTagName("textarea");
+
     for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].value === "") {
-            inputs[i].className += " is-invalid";
+            inputs[i].classList.add("is-invalid");
+            inputs[i].classList.remove("is-valid");
             valid = false;
         } else {
-            inputs[i].className = inputs[i].className.replace(" is-invalid", "");
+            inputs[i].classList.remove("is-invalid");
+            inputs[i].classList.add("is-valid");
         }
     }
     for (let i = 0; i < selects.length; i++) {
         if (selects[i].value === "") {
-            selects[i].className += " is-invalid";
+            selects[i].classList.add("is-invalid");
+            selects[i].classList.remove("is-valid");
             valid = false;
         } else {
-            selects[i].className = selects[i].className.replace(" is-invalid", "");
+            selects[i].classList.remove("is-invalid");
+            selects[i].classList.add("is-valid");
         }
     }
     return valid;
@@ -72,19 +77,34 @@ function updateNavigationButtons(n, stepCount) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Form validation
-    const forms = document.querySelectorAll(".needs-validation");
-    Array.prototype.slice.call(forms).forEach(function (form) {
-        form.addEventListener("submit", function (event) {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-            form.classList.add("was-validated");
-        }, false);
-    });
+function addInputEventListeners(step) {
+    let inputs = step.getElementsByTagName("input");
+    let selects = step.getElementsByTagName("select");
 
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener("input", function () {
+            if (inputs[i].value !== "") {
+                inputs[i].classList.remove("is-invalid");
+                inputs[i].classList.add("is-valid");
+            } else {
+                inputs[i].classList.remove("is-valid");
+            }
+        });
+    }
+
+    for (let i = 0; i < selects.length; i++) {
+        selects[i].addEventListener("change", function () {
+            if (selects[i].value !== "") {
+                selects[i].classList.remove("is-invalid");
+                selects[i].classList.add("is-valid");
+            } else {
+                selects[i].classList.remove("is-valid");
+            }
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
     const phoneInputField = document.querySelector("#college-phone");
     const phoneInput = window.intlTelInput(phoneInputField, {
         onlyCountries: ["in"],
