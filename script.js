@@ -23,11 +23,20 @@ function nextPrev(n) {
 
 function validateForm() {
     let valid = true;
-    let inputs = document.getElementsByClassName("step")[currentStep].getElementsByTagName("input");
-    let selects = document.getElementsByClassName("step")[currentStep].getElementsByTagName("select");
+    let step = document.getElementsByClassName("step")[currentStep];
+    let inputs = step.getElementsByTagName("input");
+    let selects = step.getElementsByTagName("select");
 
     for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].value === "") {
+        if (inputs[i].type === "text" && inputs[i].name === "phone") {
+            if (!validatePhoneNumber(inputs[i])) {
+                valid = false;
+            }
+        } else if (inputs[i].type === "email") {
+            if (!validateEmail(inputs[i])) {
+                valid = false;
+            }
+        } else if (inputs[i].value === "") {
             inputs[i].classList.add("is-invalid");
             inputs[i].classList.remove("is-valid");
             valid = false;
@@ -36,6 +45,7 @@ function validateForm() {
             inputs[i].classList.add("is-valid");
         }
     }
+
     for (let i = 0; i < selects.length; i++) {
         if (selects[i].value === "") {
             selects[i].classList.add("is-invalid");
@@ -47,6 +57,32 @@ function validateForm() {
         }
     }
     return valid;
+}
+
+function validatePhoneNumber(input) {
+    const phonePattern = /^\d{10}$/;
+    if (!phonePattern.test(input.value)) {
+        input.classList.add("is-invalid");
+        input.classList.remove("is-valid");
+        return false;
+    } else {
+        input.classList.remove("is-invalid");
+        input.classList.add("is-valid");
+        return true;
+    }
+}
+
+function validateEmail(input) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(input.value)) {
+        input.classList.add("is-invalid");
+        input.classList.remove("is-valid");
+        return false;
+    } else {
+        input.classList.remove("is-invalid");
+        input.classList.add("is-valid");
+        return true;
+    }
 }
 
 function fixStepIndicator(n) {
@@ -83,11 +119,17 @@ function addInputEventListeners(step) {
 
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener("input", function () {
-            if (inputs[i].value !== "") {
-                inputs[i].classList.remove("is-invalid");
-                inputs[i].classList.add("is-valid");
+            if (inputs[i].type === "text" && inputs[i].name === "phone") {
+                validatePhoneNumber(inputs[i]);
+            } else if (inputs[i].type === "email") {
+                validateEmail(inputs[i]);
             } else {
-                inputs[i].classList.remove("is-valid");
+                if (inputs[i].value !== "") {
+                    inputs[i].classList.remove("is-invalid");
+                    inputs[i].classList.add("is-valid");
+                } else {
+                    inputs[i].classList.remove("is-valid");
+                }
             }
         });
     }
