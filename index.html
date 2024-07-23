@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="container px-0">
+    <div class="left-container col-md-5 p-4 pt-2 text-white">
+        <div class="logo m-2 ms-0 mb-0">
+            <img src="images\IMG_20240722_170951.477-removebg-preview.png" alt="" height="60" width="200px">
+        </div>
+        <div class="l-head mt-4">
+            <h1 class="fw-600">Let's Get Started</h1>
+        </div>
+        <div class="l-content mt-3">
+            <p>"Forge Alumnus is a cutting-edge platform linking universities and industries. It offers networking, mentoring, hackathons, workshops, and updates on internships and job opportunities, serving as a vital resource for industry-related information."</p>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide left-panel mt-4 mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="images\image.png" class="d-block w-100" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images\image.png" class="d-block w-100" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images\image.png" class="d-block w-100" alt="Image 3">
+                </div>
+                <div class="carousel-item active">
+                    <img src="images\image.png" class="d-block w-100" alt="Image 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="images\image.png" class="d-block w-100" alt="Image 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="images\image.png" class="d-block w-100" alt="Image 6">
+                </div>
+            </div>
+            <div class="carousel-indicators mt-5">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            </div>
+        </div>
+    </div>
+    <div class="right-container col-md-7 p-3">
+        <div class="mob-logo">
+            <img src="images\IMG_20240722_170919.163-removebg-preview.png" alt="" height="44px" width="53px">
+        </div>
+        <div class="r-panel p-3 mt-5">
+            <div class="heading d-flex justify-content-center">
+                <h3 class="fw-bold mb-3">UNIVERSITY REGISTRATION</h3>
+            </div>
+            <div class="step-indicators mt-3 mb-3">
+                    <span class="step-icon" id="iconStep1"></i></span>
+                    <div class="indicator-line active"></div>
+                    <span class="step-icon" id="iconStep2"></i></span>
+                    <div class="indicator-line active"></div>
+                    <span class="step-icon" id="iconStep3"></i></span>
+            </div>
+            <div class="f-body">
+                <form id="multiStepForm" class="row needs-validation" novalidate>
+                    <!-- Step 1 -->
+                    
+                    <div class="step  active">
+                        <div class="form-group mt-2 col-md-12">
+                            <h6 class="fw-light">UNIVERSITY REPRESENTATIVE INFORMATION</h6>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="first-name">First Name <sup class="asterik">*</sup></label>
+                                <input type="text" id="first-name" class="form-control" name="first-name" placeholder="Enter first name" required>
+                                <div class="invalid-feedback">
+                                    First name required.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="last-name">Last Name <sup class="asterik">*</sup></label>
+                                <input type="text" id="last-name" name="last-name" class="form-control" placeholder="Enter last name" required>
+                                <div class="invalid-feedback">
+                                    Last name required.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6 contact-numbers">
+                                <label for="phone">Phone <sup class="asterik">*</sup></label><br>
+                                <input type="tel" id="phone" class="form-control" name="phone" placeholder="Enter phone number" required>
+                                <div class="invalid-feedback">
+                                    Phone number required.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="email">Email ID <sup class="asterik">*</sup></label>
+                                <input type="email" id="email" class="form-control" name="email" placeholder="Enter Email" required>
+                                <div class="invalid-feedback">
+                                    Email address required.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="title">Designation <sup class="asterik">*</sup></label>
+                                <input type="text" id="title" class="form-control" name="title" placeholder="Enter designation" required>
+                                <div class="invalid-feedback">
+                                    Designation required.
+                                </div>
+                            </div>
+                            <div class=" col-md-6">
+                                <label for="title">Refered By</label>
+                                <input type="text" id="title" class="form-control" name="title" placeholder="Enter refered by" required>
+                                <div class="invalid-feedback">
+                                    Refered By required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="step">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="name">College Name <sup class="asterik">*</sup></label>
+                                <input type="text" id="name" class="form-control" name="name" placeholder="Enter college name" required>
+                                <div class="invalid-feedback">
+                                    College name required.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="college-website">College Website <sup class="asterik">*</sup></label>
+                                <input type="url" id="college-website" class="form-control" name="college-website" placeholder="Enter college website" required>
+                                <div class="invalid-feedback">
+                                    College website required.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="college-email">College Email <sup class="asterik">*</sup></label>
+                                <input type="email" id="college-email" class="form-control" name="college-email" required placeholder="Enter college email">
+                                <div class="invalid-feedback">
+                                    College Email required.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6 contact-numbers">
+                                <label for="college-phone">College Phone <sup class="asterik">*</sup></label><br>
+                                <input type="tel" id="college-phone" name="college-phone" class="phone-number form-control pe-5" required placeholder="Enter college phone number" >
+                                <div class="invalid-feedback">
+                                    College phone number required.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="college-location">College Location <sup class="asterik">*</sup></label>
+                                <input type="text" id="college-location" name="college-location" class="form-control" required placeholder="Enter college location">
+                                <div class="invalid-feedback">
+                                    University location required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="step">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="college-type">University Type <sup class="asterik">*</sup></label>
+                                <select id="college-type" class="college-dropdown form-select form-control" required>
+                                    <option class="college-font" value="" disabled selected>Select University Type</option>
+                                    <option value="university">University</option>
+                                    <option value="autonomous">Autonomous University</option>
+                                    <option value="institution">Institute</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a University type.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="about">About University <sup class="asterik">*</sup></label>
+                                <textarea id="about" name="about" class="form-control" required placeholder="Enter about college" required></textarea>
+                                <div class="invalid-feedback">
+                                    About field required.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="offer-detail">Please detail your offer/discount here. Include details about the amount of the discount, what it covers, and how to receive it.</label>
+                                <textarea id="offer-detail" name="offer-detail" class="form-control" placeholder="Enter offer/discount here " required></textarea>
+                                <div class="invalid-feedback">
+                                    Offer details required.
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 mt-3">
+                                <div class="form-check">
+                                    <label class="form-check-label mt-0" for="accept-terms">I agree to the Terms and Conditions <sup class="asterik">*</sup></label>
+                                    <input type="checkbox" class="form-check-input mt-1" id="accept-terms" name="accept-terms" required>
+                                    <div class="invalid-feedback">
+                                        Agree to the terms and conditions.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-navigation mt-5 col-md-12 d-flex justify-content-between">
+                    <div class="prev">                            <button type="button" class="btn btn-secondary" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    </div>
+                    <div class="next">                            <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                    </div>
+                    <div class="form-group" id="submitBtn" style="display: none;">
+                        <button type="submit" class="btn btn-primary">Unlock Urself</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div> 
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlRWl3ecld3mJ3p8JI7lflFhbWIe4GkSyboJfElU4rK3s4ojb6FD6b21rsD" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGqFnmTtlZCHy8R8KL5QOP6zM1z0vZA9uGIlRvnD/7g/XE7AB5GOq2CMu1T" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="script.js"></script>
+</body>
+</html>
