@@ -28,8 +28,12 @@ body{
     background-color: white;
 }
 
-textarea,select,input::placeholder
+select,input::placeholder
 {
+    font-weight: lighter;
+    font-size: smaller;
+}
+textarea::placeholder{
     font-weight: lighter;
     font-size: smaller;
 }
@@ -44,7 +48,7 @@ textarea,select,input::placeholder
 }
 
 .invalid-feedback{
-    font-size: small;
+    font-size: 10px;
 }
 footer{
     
@@ -147,8 +151,8 @@ input{
     }
     .container{
         margin: auto;
-        height: 100%;
-        width: 100%;
+        height: auto;
+        width: auto;
         display: flex;
         flex-wrap: nowrap;
     }
